@@ -1,3 +1,13 @@
+# Commands to get here:
+
+```bash
+npm install --save-dev eslint-config-react-app
+touch .eslintrc.js
+mv .prettierrc .prettierrc.js
+npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+npm install --save-dev eslint-config-prettier
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
