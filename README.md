@@ -5,8 +5,19 @@ npm install --save-dev eslint-config-react-app
 touch .eslintrc.js
 mv .prettierrc .prettierrc.js
 npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
-npm install --save-dev eslint-config-prettier
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+npx install-peerdeps --dev eslint-config-airbnb
 ```
+
+added:
+
+```javascript
+"editor.codeActionsOnSave": {
+  "source.fixAll": true
+}
+```
+
+to the VS Code `settings.json` file
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
