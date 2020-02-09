@@ -1,7 +1,8 @@
 module.exports = {
   plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    // 'prettier/prettier': 'error',
+    'prettier/prettier': ['error', { singleQuote: true }],
     'max-len': ['error', { code: 100 }],
     quotes: [
       'error',
