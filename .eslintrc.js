@@ -10,8 +10,16 @@ module.exports = {
     ],
     'react/prop-types': ['warn'],
   },
+  env: {
+    browser: true,
+    jest: true,
+  },
   globals: {
     __PATH_PREFIX__: true,
+    render: 'readonly',
+    waitForElement: 'readonly',
+    fireEvent: 'readonly',
+    waitForDomChange: 'readonly',
   },
   extends: [`airbnb`, 'airbnb/hooks', 'prettier', 'prettier/react'],
 };

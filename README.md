@@ -19,6 +19,12 @@ added:
 
 to the VS Code `settings.json` file
 
+## [Adding Testing](https://www.gatsbyjs.org/docs/unit-testing/)
+
+```bash
+npm install --save-dev jest babel-jest react-test-renderer babel-preset-gatsby identity-obj-proxy
+```
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
