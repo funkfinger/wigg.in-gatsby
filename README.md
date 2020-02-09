@@ -4,6 +4,8 @@
 npm install --save-dev eslint-config-react-app
 touch .eslintrc.js
 mv .prettierrc .prettierrc.js
+npm install --save-dev gatsby-plugin-eslint
+npm install --save-dev eslint eslint-loader
 npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 npm install --save-dev eslint-config-prettier eslint-plugin-prettier
 npx install-peerdeps --dev eslint-config-airbnb
