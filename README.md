@@ -1,3 +1,118 @@
+## [Markdown](https://www.gatsbyjs.org/packages/gatsby-transformer-remark)
+
+```bash
+npm install --save gatsby-transformer-remark
+```
+
+adding to `gatsby-config.js`
+
+```javascript
+{
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      // CommonMark mode (default: true)
+      commonmark: true,
+      // Footnotes mode (default: true)
+      footnotes: true,
+      // Pedantic mode (default: true)
+      pedantic: true,
+      // GitHub Flavored Markdown mode (default: true)
+      gfm: true,
+      // Plugins configs
+      plugins: [],
+    },
+  },
+```
+
+---
+
+```bash
+mv .prettierrc .prettierrc.js
+```
+
+`.prettierrc.js`:
+
+```javascript
+module.exports = {
+  endOfLine: 'lf',
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
+};
+```
+
+### eslint stuff
+
+#### THIS DID NOT WORK:
+
+```bash
+npx install-peerdeps --dev eslint-config-airbnb
+```
+
+See [these docs](https://www.npmjs.com/package/eslint-config-airbnb)... had to get the peer dependencies using this:
+
+```bash
+npm info "eslint-config-airbnb@latest" peerDependencies
+```
+
+and then do this:
+
+```bash
+npm install --save-dev eslint-config-airbnb eslint@^6.1.0 eslint-plugin-import@^2.18.2 eslint-plugin-jsx-a11y@^6.2.3 eslint-plugin-react@^7.14.3 eslint-plugin-react-hooks@^1.7.0
+```
+
+and then things busted, so I had to:
+
+```bash
+rm -Rf node_modules
+rm package-lock.json
+npm install
+```
+
+and things came back to life... sooo, moving forward:
+
+```bash
+npm install --save-dev eslint-config-prettier prettier-eslint
+```
+
+```bash
+touch .eslintrc.js
+```
+
+and set it's contents to:
+
+```javascript
+module.exports = {
+  plugins: ['prettier'],
+  rules: {
+    'prettier/prettier': ['error', { singleQuote: true }],
+    'max-len': ['error', { code: 100 }],
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: false },
+    ],
+    'react/prop-types': ['warn'],
+  },
+  globals: {
+    __PATH_PREFIX__: true,
+  },
+  extends: [`airbnb`, 'airbnb/hooks', 'prettier', 'prettier/react'],
+};
+```
+
+realized that I was missing the eslint plugin
+
+```bash
+npm install --save-dev gatsby-plugin-eslint
+npm install --save-dev eslint eslint-loader
+```
+
+and it looks like that's the problem
+
+---
+
 # Commands to get here:
 
 ```bash
