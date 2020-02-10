@@ -44,25 +44,43 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        // CommonMark mode (default: true)
         commonmark: true,
-        // Footnotes mode (default: true)
         footnotes: true,
-        // Pedantic mode (default: true)
         pedantic: true,
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
         plugins: [
           {
+            // see https://github.com/matchilling/gatsby-remark-emojis for options
+            resolve: 'gatsby-remark-emojis',
+            options: {
+              active: true,
+              class: 'emoji-icon',
+            },
+          },
+          {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 800,
+              maxWidth: 1000,
             },
           },
         ],
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-mdx',
+    //   options: {
+    //     gatsbyRemarkPlugins: [
+    //       {
+    //         resolve: 'gatsby-remark-images',
+    //         options: {
+    //           maxWidth: 1000,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

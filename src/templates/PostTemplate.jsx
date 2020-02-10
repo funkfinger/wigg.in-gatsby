@@ -8,17 +8,14 @@ const Template = ({ data }) => {
   const { frontmatter, html } = postBySlugQuery;
   const { heroImage } = frontmatter;
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <Img fluid={heroImage.childImageSharp.fluid} />
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      </div>
+    <div>
+      <Img fluid={heroImage.childImageSharp.fluid} />
+      <h1>{frontmatter.title}</h1>
+      <h2>{frontmatter.date}</h2>
+      <div
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </div>
   );
 };
