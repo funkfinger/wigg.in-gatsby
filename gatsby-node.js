@@ -4,11 +4,11 @@ const path = require('path');
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
-  const blogPostTemplate = path.resolve('src/templates/PostTemplate.jsx');
+  const MdxBlogPostTemplate = path.resolve('src/templates/MdxPostTemplate.jsx');
 
   const result = await graphql(`
-    {
-      pageBuilderQuery: allMarkdownRemark(
+    query MdxPageBuilderQuery {
+      mdxPageBuilderQuery: allMdx(
         sort: { order: ASC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -44,10 +44,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  result.data.pageBuilderQuery.edges.forEach(({ node, next, previous }) => {
+  result.data.mdxPageBuilderQuery.edges.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
-      component: blogPostTemplate,
+      component: MdxBlogPostTemplate,
       context: {
         slug: node.fields.slug,
         next,
@@ -61,6 +61,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark') {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: 'slug',
+      node,
+      value,
+    });
+  }
+
+  if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: 'slug',
