@@ -2,6 +2,7 @@
 
 ```bash
 npm install --save gatsby-transformer-remark
+npm install --save gatsby-remark-images
 ```
 
 adding to `gatsby-config.js`
