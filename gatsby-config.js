@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-eslint',
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet-async',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -44,33 +44,7 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
-    // {
-    //   resolve: 'gatsby-transformer-remark',
-    //   options: {
-    //     commonmark: true,
-    //     footnotes: true,
-    //     pedantic: true,
-    //     // GitHub Flavored Markdown mode (default: true)
-    //     gfm: true,
-    //     // Plugins configs
-    //     plugins: [
-    //       {
-    //         // see https://github.com/matchilling/gatsby-remark-emojis for options
-    //         resolve: 'gatsby-remark-emojis',
-    //         options: {
-    //           active: true,
-    //           class: 'emoji-icon',
-    //         },
-    //       },
-    //       {
-    //         resolve: 'gatsby-remark-images',
-    //         options: {
-    //           maxWidth: imageMaxWidth,
-    //         },
-    //       },
-    //     ],
-    //   },
-    // },
+
     {
       resolve: 'gatsby-plugin-mdx',
       options: {

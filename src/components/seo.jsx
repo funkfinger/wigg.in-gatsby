@@ -7,25 +7,23 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
+  const { seoQuery } = useStaticQuery(graphql`
+    query SeoQuery {
+      seoQuery: site {
+        siteMetadata {
+          title
+          description
+          author
         }
       }
-    `,
-  );
+    }
+  `);
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || seoQuery.siteMetadata.description;
 
   return (
     <Helmet
@@ -33,7 +31,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${seoQuery.siteMetadata.title}`}
       meta={[
         {
           name: 'description',
@@ -57,7 +55,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.author,
+          content: seoQuery.siteMetadata.author,
         },
         {
           name: 'twitter:title',

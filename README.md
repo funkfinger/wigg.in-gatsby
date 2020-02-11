@@ -1,3 +1,25 @@
+## Swap `react-helmet` with `react-helmet-async`
+
+```bash
+npm remove react-helmet gatsby-plugin-react-helmet
+npm install --save react-helmet-async gatsby-plugin-react-helmet-async
+```
+
+and edit `gatsby-config.js` to use `gatsby-plugin-react-helmet-async` **not** `gatsby-plugin-react-helmet`
+
+and edited `seo.jsx` to use `react-helmet-async`
+
+```javascript 3
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet-async';
+import { useStaticQuery, graphql } from 'gatsby';
+```
+
+and wrapped `index.jsx` with `<HelmetProvider>`
+
+In
+
 ## [Markdown](https://www.gatsbyjs.org/packages/gatsby-transformer-remark)
 
 ```bash

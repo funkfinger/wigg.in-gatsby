@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
-const React = require('react');
+import React from 'react';
+
+import fixtures from '../src/___test___/fixtures';
 
 const gatsby = jest.requireActual('gatsby');
 
@@ -25,5 +27,6 @@ module.exports = {
       }),
   ),
   StaticQuery: jest.fn(),
-  useStaticQuery: jest.fn(),
+  // useStaticQuery: jest.fn(),
+  useStaticQuery: jest.fn().mockImplementation(() => ({ ...fixtures })),
 };
