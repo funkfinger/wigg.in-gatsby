@@ -1,10 +1,10 @@
 ---
 title: 'Test Post 1'
-date: 2020-02-08 22:57:09
+date: 2020-02-01 22:47:46
 heroImage: ../images/web-hero.png
 ---
 
-Test post one.
+Test post one!
 
 :boom: BOOM!
 

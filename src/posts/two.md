@@ -1,10 +1,10 @@
 ---
-title: '💥Test Post 1💥'
-date: 2020-02-08 22:57:09
+title: '💥Test Post 2💥'
+date: 2020-02-07 22:57:09
 heroImage: ../images/web-hero.png
 ---
 
-Test post one.
+Test post two.
 
 :carrot: BOOM!
 
