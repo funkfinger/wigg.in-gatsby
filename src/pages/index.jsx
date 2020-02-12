@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
-import { HelmetProvider } from 'react-helmet-async';
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -42,11 +41,7 @@ const IndexPage = () => {
       <div>{node.excerpt}</div>
     </div>
   ));
-  return (
-    <HelmetProvider>
-      <div>{posts}</div>
-    </HelmetProvider>
-  );
+  return <div>{posts}</div>;
 };
 
 export default IndexPage;

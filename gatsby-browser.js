@@ -4,11 +4,20 @@
 /* eslint-disable react/jsx-filename-extension */
 
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 
 import Layout from './src/components/Layout/Layout';
 
 // props provide same data to Layout as Page element will get
 // including location, data, etc - you don't need to pass it
 export const wrapPageElement = ({ element, props }) => (
-  <Layout {...props}>{element}</Layout>
+  <HelmetProvider>
+    <div className="helmetProvider">
+      <Layout {...props}>{element}</Layout>
+    </div>
+  </HelmetProvider>
 );
+
+// export const wrapRootElement = ({ element }) => (
+//   <HelmetProvider>{element}</HelmetProvider>
+// );

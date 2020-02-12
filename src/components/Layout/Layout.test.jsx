@@ -1,11 +1,20 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Layout from './Layout';
 
 const testComponent = (
-  <Layout>
-    <p>hi</p>
-  </Layout>
+  <HelmetProvider>
+    <Layout>
+      <p>hi</p>
+    </Layout>
+  </HelmetProvider>
 );
+
+test.skip('it has a default title', async () => {
+  render(testComponent);
+  await waitForDomChange();
+  expect(document.title).toEqual('Jay, Trying To Remember...');
+});
 
 test('it has a waived copyright', () => {
   const { getByText } = render(testComponent);
