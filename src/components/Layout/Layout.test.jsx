@@ -10,7 +10,7 @@ const testComponent = (
   </HelmetProvider>
 );
 
-test.skip('it has a default title', async () => {
+test('it has a default title', async () => {
   render(testComponent);
   await waitForDomChange();
   expect(document.title).toEqual('Jay, Trying To Remember...');

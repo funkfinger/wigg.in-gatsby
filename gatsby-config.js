@@ -8,6 +8,7 @@ module.exports = {
     author: '@jaywiggins',
   },
   plugins: [
+    'gatsby-plugin-sass',
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet-async',
     {

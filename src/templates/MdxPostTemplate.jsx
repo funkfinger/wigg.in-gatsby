@@ -1,21 +1,45 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-const Template = ({ data }) => {
-  const { mdxPostBySlugQuery } = data;
-  const { frontmatter, body } = mdxPostBySlugQuery;
-  const { heroImage } = frontmatter;
+export const TemplatePure = ({ img, title, date, body }) => {
+  // export const TemplatePure = ({ title, date }) => {
   return (
     <div>
-      <Img fluid={heroImage.childImageSharp.fluid} />
-      <h1>{frontmatter.title}</h1>
-      <h2>{frontmatter.date}</h2>
+      <Img fluid={img} />
+      <h1>{title}</h1>
+      <h2>{date}</h2>
       <MDXRenderer>{body}</MDXRenderer>
     </div>
   );
+};
+
+TemplatePure.propTypes = {
+  // img: PropTypes.shape({}).isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  // body: PropTypes.string.isRequired,
+};
+
+const Template = ({
+  data: {
+    mdxPostBySlugQuery: {
+      frontmatter: {
+        heroImage: {
+          childImageSharp: { fluid },
+        },
+        title,
+        date,
+      },
+      body,
+    },
+  },
+}) => {
+  return <TemplatePure img={fluid} title={title} date={date} body={body} />;
 };
 
 Template.propTypes = {

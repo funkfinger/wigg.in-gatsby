@@ -1,22 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet-async';
+import styled from 'styled-components';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
+const ContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+`;
+
+const InnerContainerDiv = styled.div`
+  max-width: 900px;
+  padding: 0 20px;
+`;
+
 const Layout = ({ children, title }) => {
   return (
-    <div className="layout">
-      <Helmet>
-        <title>{title}</title>
-      </Helmet>
-      <Header />
-      <main>
-        <div>{children}</div>
-      </main>
-      <Footer />
-    </div>
+    <ContainerDiv className="layout">
+      <InnerContainerDiv className="inner-container">
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+        <Header />
+        <main>
+          <div>{children}</div>
+        </main>
+        <Footer />
+      </InnerContainerDiv>
+    </ContainerDiv>
   );
 };
 
