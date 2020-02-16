@@ -7,17 +7,17 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 const ContainerDiv = styled.div`
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding: 0 10px;
 `;
 
-const InnerContainerDiv = styled.div`
-  max-width: 900px;
-  padding: 0 20px;
-`;
+const InnerContainerDiv = styled.div``;
+
+const StyledMain = styled.main``;
 
 const Layout = ({ children, title }) => {
   return (
@@ -27,9 +27,9 @@ const Layout = ({ children, title }) => {
           <title>{title}</title>
         </Helmet>
         <Header />
-        <main>
+        <StyledMain>
           <div>{children}</div>
-        </main>
+        </StyledMain>
         <Footer />
       </InnerContainerDiv>
     </ContainerDiv>

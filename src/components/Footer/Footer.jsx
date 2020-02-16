@@ -1,7 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const FooterStyled = styled.footer`
+  margin-top: 4em;
+  font-size: 0.8em;
+  text-align: center;
+  color: #666;
+`;
 
 const Footer = () => (
-  <footer>
+  <FooterStyled>
     <p
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...{ 'xmlns:dct': 'http://purl.org/dc/terms/' }}
@@ -15,7 +23,7 @@ const Footer = () => (
       To the extent possible under law,{' '}
       <a rel="dct:publisher" href="https://jaywiggins.com">
         I
-      </a>
+      </a>{' '}
       have waived all copyright and related or neighboring rights to any content
       I have created for <span property="dct:title">jaywiggins.com</span>. This
       work is published from:{' '}
@@ -29,7 +37,7 @@ const Footer = () => (
       </span>
       .
     </p>
-  </footer>
+  </FooterStyled>
 );
 
 export default Footer;

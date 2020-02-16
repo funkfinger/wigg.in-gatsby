@@ -8,6 +8,14 @@ module.exports = {
     author: '@jaywiggins',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Sacramento'],
+        },
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-eslint',
     'gatsby-plugin-react-helmet-async',

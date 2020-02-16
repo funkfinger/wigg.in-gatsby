@@ -1,6 +1,45 @@
 html {
-  background-color: rebeccapurple;
-  p {
-    color: white;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'PT Sans Narrow', sans-serif;
+  }
+
+  body {
+    // background-color: #2d132c;
+    background-color: #fff;
+    // background-color: #041f1e;
+    // background: linear-gradient(
+    //   141deg,
+    //   #2d132c 20%,
+    //   rgb(255, 166, 0) 64%,
+    //   #2d132c 80%
+    // );
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
   }
 }
+
+// /* Color Theme Swatches in Hex */
+// .8-COO03572-1-hex { color: #F29F05; }
+// .8-COO03572-2-hex { color: #F27405; }
+// .8-COO03572-3-hex { color: #D93D04; }
+// .8-COO03572-4-hex { color: #8C0E03; }
+// .8-COO03572-5-hex { color: #590202; }
+
+// /* Color Theme Swatches in RGBA */
+// .8-COO03572-1-rgba { color: rgba(242, 159, 5, 1); }
+// .8-COO03572-2-rgba { color: rgba(242, 116, 5, 1); }
+// .8-COO03572-3-rgba { color: rgba(217, 61, 4, 1); }
+// .8-COO03572-4-rgba { color: rgba(140, 14, 3, 1); }
+// .8-COO03572-5-rgba { color: rgba(89, 2, 2, 1); }
+
+// /* Color Theme Swatches in HSLA */
+// .8-COO03572-1-hsla { color: hsla(38, 95, 48, 1); }
+// .8-COO03572-2-hsla { color: hsla(28, 95, 48, 1); }
+// .8-COO03572-3-hsla { color: hsla(16, 96, 43, 1); }
+// .8-COO03572-4-hsla { color: hsla(4, 95, 28, 1); }
+// .8-COO03572-5-hsla { color: hsla(0, 95, 17, 1); }

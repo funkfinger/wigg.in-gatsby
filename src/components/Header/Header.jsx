@@ -2,46 +2,65 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const HeaderStyled = styled.header`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px #000 solid;
-  margin: 0;
-  padding: 0;
-  background: #333;
-`;
+const HeaderContainerStyled = styled.div``;
+
+const HeaderStyled = styled.header``;
 
 const H1Styled = styled.h1`
-  text-transform: uppercase;
-  border: 1px #000 solid;
-  font-size: 28px;
+  font-family: 'Sacramento', sans-serif;
+  font-weight: normal;
+  font-size: 60px;
+  font-size: 4em;
+  color: #e88d67;
+  margin: 0;
+  margin-top: 1em;
   text-align: center;
-  hover: {
+  line-height: 90%;
+  z-index: -1;
+  @media screen and (max-width: 800px) {
+    font-size: 40px;
+    font-size: 3em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 30px;
+    font-size: 2.5em;
   }
 `;
 
 const H2Styled = styled.h2`
-  text-transform: uppercase;
-  font-size: 1.2em;
+  font-weight: normal;
+  font-size: 1.5em;
+  margin: 0.25em 0;
   text-align: center;
+  // color: rgba(0, 0, 0, 0.4);
+  color: #bb999c;
+  @media screen and (max-width: 800px) {
+    font-size: 1em;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1em;
+  }
 `;
 
 const LinkStyled = styled(Link)`
   text-decoration: none;
-  :hover {
-    font-size: 30px;
-    text-decoration: underline;
-  }
-`;
+  > h1 { 
+    // transition: transform 0.25s ease-in-out;
+    :hover {
+      // cursor: pointer;
+      // transform: scale(1.1, 1.1);
+    }
+  `;
 
 const Header = () => (
-  <HeaderStyled>
-    <LinkStyled to="/">
-      <H1Styled>Jay, Trying To Remember...</H1Styled>
-    </LinkStyled>
-    <H2Styled>just some dumb stuff I&apos;ll forget anyway</H2Styled>
-  </HeaderStyled>
+  <HeaderContainerStyled>
+    <HeaderStyled>
+      <LinkStyled to="/">
+        <H1Styled className="site-heading">Jay, Trying To Remember...</H1Styled>
+      </LinkStyled>
+      <H2Styled>dumb stuff I should probably forget anyway</H2Styled>
+    </HeaderStyled>
+  </HeaderContainerStyled>
 );
 
 export default Header;
