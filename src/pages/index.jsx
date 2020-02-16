@@ -1,55 +1,25 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-const PostDivStyled = styled.div`
-  border: 1px rgba(0, 0, 0, 0.25) solid;
-  margin-bottom: 2em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-`;
+import HeroImage from '../components/HeroImage/HeroImage';
 
-const PostTextDivStyle = styled.div`
-  padding: 0.5em 2em;
-`;
-
-const PostListH2Styled = styled.h2`
-  margin: 0;
-  padding: 0.25em 0em 1em 0em;
-  margin-bottom: -1.1em;
-  font-family: 'Sacramento', sans-serif;
-  font-size: 2.8em;
-  font-weight: normal;
-  text-align: center;
-  color: #e88d67;
-  &: {
-    text-decoration: none;
-  }
-  @media screen and (max-width: 800px) {
-    font-size: 2.2em;
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 2em;
-  }
-`;
-
-const PostListH4Styled = styled.h4`
-  margin: 0;
-  padding: 0;
-  padding-bottom: 8px;
-  font-size: 16px;
-  color: #bb999c;
-  text-align: center;
-`;
+import PostDivStyled from '../components/StyledComponents/PostDivStyled';
+import PostH2Styled from '../components/StyledComponents/PostH2Styled';
+import PostH4Styled from '../components/StyledComponents/PostH4Styled';
+import PostStyled from '../components/StyledComponents/PostStyled';
+import PostTextDivStyled from '../components/StyledComponents/PostTextDivStyled';
 
 const LinkStyled = styled(Link)`
   text-decoration: none;
 `;
 
-const PostListExcerptDivStyled = styled.div`
-  padding: 1em 0;
-  font-size: 1.4em;
+const MoreDivStyled = styled.div`
+  padding-bottom: 1em;
 `;
+
+// const HeroImage = ({ heroImage }) =>
+//   heroImage ? <Img fluid={heroImage.childImageSharp.fluid} /> : <div />;
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -79,19 +49,33 @@ const IndexPage = () => {
       }
     }
   `);
+
   const allPosts = data.allPostsQuery.edges;
-  const posts = allPosts.map(({ node }) => (
-    <PostDivStyled key={node.fields.slug}>
-      <LinkStyled to={node.fields.slug}>
-        <Img fluid={node.frontmatter.heroImage.childImageSharp.fluid} />
-        <PostTextDivStyle>
-          <PostListH2Styled>{node.frontmatter.title}</PostListH2Styled>
-          <PostListH4Styled>{node.frontmatter.date}</PostListH4Styled>
-          <PostListExcerptDivStyled>{node.excerpt}</PostListExcerptDivStyled>
-        </PostTextDivStyle>
-      </LinkStyled>
-    </PostDivStyled>
-  ));
+  const posts = allPosts.map(({ node }) => {
+    // const heroImage = node.frontmatter.heroImage ? (
+    //   <Img fluid={node.frontmatter.heroImage.childImageSharp.fluid} />
+    // ) : (
+    //   <div />
+    // );
+
+    return (
+      <PostDivStyled key={node.fields.slug}>
+        <LinkStyled to={node.fields.slug}>
+          <HeroImage heroImage={node.frontmatter.heroImage} />
+        </LinkStyled>
+        <PostStyled>
+          <LinkStyled to={node.fields.slug}>
+            <PostH2Styled>{node.frontmatter.title}</PostH2Styled>
+            <PostH4Styled>{node.frontmatter.date}</PostH4Styled>
+          </LinkStyled>
+          <PostTextDivStyled>{node.excerpt}</PostTextDivStyled>
+          <MoreDivStyled>
+            <LinkStyled to={node.fields.slug}>more...</LinkStyled>
+          </MoreDivStyled>
+        </PostStyled>
+      </PostDivStyled>
+    );
+  });
   return <div>{posts}</div>;
 };
 

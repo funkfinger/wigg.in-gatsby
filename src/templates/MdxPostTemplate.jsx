@@ -3,18 +3,30 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import styled from 'styled-components';
+
+import HeroImage from '../components/HeroImage/HeroImage';
+
+import PostDivStyled from '../components/StyledComponents/PostDivStyled';
+import PostH2Styled from '../components/StyledComponents/PostH2Styled';
+import PostH4Styled from '../components/StyledComponents/PostH4Styled';
+import PostTextDivStyled from '../components/StyledComponents/PostTextDivStyled';
+import PostStyled from '../components/StyledComponents/PostStyled';
 
 export const TemplatePure = ({ img, title, date, body }) => {
   // export const TemplatePure = ({ title, date }) => {
   return (
-    <div>
-      <Img fluid={img} />
-      <h1>{title}</h1>
-      <h2>{date}</h2>
-      <MDXRenderer>{body}</MDXRenderer>
-    </div>
+    <PostDivStyled>
+      <HeroImage heroImage={img} />
+      <PostStyled>
+        <PostH2Styled>{title}</PostH2Styled>
+        <PostH4Styled>{date}</PostH4Styled>
+        <PostTextDivStyled>
+          <MDXRenderer>{body}</MDXRenderer>
+        </PostTextDivStyled>
+      </PostStyled>
+    </PostDivStyled>
   );
 };
 
@@ -29,9 +41,10 @@ const Template = ({
   data: {
     mdxPostBySlugQuery: {
       frontmatter: {
-        heroImage: {
-          childImageSharp: { fluid },
-        },
+        heroImage,
+        // heroImage: {
+        //   childImageSharp: { fluid },
+        // },
         title,
         date,
       },
@@ -39,7 +52,7 @@ const Template = ({
     },
   },
 }) => {
-  return <TemplatePure img={fluid} title={title} date={date} body={body} />;
+  return <TemplatePure img={heroImage} title={title} date={date} body={body} />;
 };
 
 Template.propTypes = {

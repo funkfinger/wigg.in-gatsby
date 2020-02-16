@@ -1,7 +1,7 @@
 ---
 title: 'Test Post 1'
 date: 2020-02-01 22:47:46
-heroImage: ../images/web-hero.png
+heroImageX: ../images/web-hero.png
 ---
 
 Test post one!
