@@ -16,11 +16,11 @@ It's been a long time since I did any AVR stuff, so I'm going to try and documen
 
 Some of what was difficult before doing AVR on OSX looks to be simplified by others now. For instance, to get the tool chain up and running you can use Homebrew - these instructions are from [https://github.com/osx-cross/homebrew-avr/](https://github.com/osx-cross/homebrew-avr/)
 
-<pre>
+```
   $ brew tap osx-cross/avr
   $ brew install avr-libc
   $ brew install avrdude --with-usb
-</pre>
+```
 
 Be patient, there's a lot going in that second command.
 
