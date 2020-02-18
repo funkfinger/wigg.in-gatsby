@@ -25,7 +25,8 @@ fs.readFile(file, 'utf8', (err, data) => {
   fs.mkdir(newFilePath, { recursive: true }, err1 => {
     if (err1) throw err;
     console.log(`trying to create a file: ${newFilePath}`);
-    const newData = data.replace(/hero_image/, 'heroImage');
+    let newData = data.replace(/hero_image/, 'heroImage');
+    newData = newData.replace('/images/', '../../../../../images/');
     fs.writeFile(`${newFilePath}/index.md`, newData, err2 => {
       if (err2) throw err;
       console.log('created file!');
