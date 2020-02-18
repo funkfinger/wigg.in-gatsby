@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 const ContainerDiv = styled.div`
-  max-width: 1000px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -19,7 +19,7 @@ export const TemplatePure = ({ img, title, date, body }) => {
   return (
     <PostDivStyled>
       <HeroImage heroImage={img} />
-      <PostStyled>
+      <PostStyled className="post">
         <PostH2Styled>{title}</PostH2Styled>
         <PostH4Styled>{date}</PostH4Styled>
         <PostTextDivStyled>

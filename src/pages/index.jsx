@@ -18,9 +18,6 @@ const MoreDivStyled = styled.div`
   padding-bottom: 1em;
 `;
 
-// const HeroImage = ({ heroImage }) =>
-//   heroImage ? <Img fluid={heroImage.childImageSharp.fluid} /> : <div />;
-
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query AllPostsQuery {
@@ -38,7 +35,7 @@ const IndexPage = () => {
               title
               heroImage {
                 childImageSharp {
-                  fluid(maxWidth: 300) {
+                  fluid(maxWidth: 1000) {
                     ...GatsbyImageSharpFluid
                   }
                 }
