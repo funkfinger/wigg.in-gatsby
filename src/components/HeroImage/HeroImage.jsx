@@ -2,6 +2,11 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 const HeroImage = ({ heroImage }) => {
-  return heroImage ? <Img fluid={heroImage.childImageSharp.fluid} /> : <div />;
+  console.log(heroImage);
+  return heroImage ? (
+    <Img fluid={heroImage.childImageSharp.fluid} />
+  ) : (
+    <div className="hero-image-holder" />
+  );
 };
 export default HeroImage;

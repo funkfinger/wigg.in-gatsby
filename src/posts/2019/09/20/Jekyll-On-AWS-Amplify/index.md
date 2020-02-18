@@ -15,4 +15,3 @@ Incidentally, [Forestry.io](https://forestry.io) was an ok solution, but I prefe
 - The [minima](https://github.com/jekyll/minima) (and probably other stuff) requires the environment variable `JEKYLL_ENV` to be set to `production` for some of the functionality to render - notably [Google Analytics](https://analytics.google.com/) and [Disqus](https://disqus.com). This is easily done in the Amplify Console
 
 ![Amazon Amplify Jekyll environment variable](https://s3.amazonaws.com/media.jaywiggins.com/images/amplify-environment-variable.png 'Amazon Amplify Jekyll environment variable')
-`

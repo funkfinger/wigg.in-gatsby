@@ -12,7 +12,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Sacramento', 'Open Sans'],
+          families: ['Sacramento', 'Open Sans', 'Roboto:300,400'],
         },
       },
     },

@@ -7,12 +7,16 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
 const ContainerDiv = styled.div`
-  max-width: 800px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 30px;
+  background-color: #0677a1;
+  background-color: #2d4159;
+  background-color: #3a5372;
+  background-color: #3a5372;
 `;
 
 const InnerContainerDiv = styled.div``;

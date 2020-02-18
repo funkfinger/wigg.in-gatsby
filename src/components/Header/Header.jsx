@@ -12,6 +12,8 @@ const H1Styled = styled.h1`
   font-size: 60px;
   font-size: 4em;
   color: #e88d67;
+  // color: rgba(255, 255, 255, 0.6);
+  color: #d6ce15;
   margin: 0;
   margin-top: 1em;
   text-align: center;
@@ -34,6 +36,8 @@ const H2Styled = styled.h2`
   text-align: center;
   // color: rgba(0, 0, 0, 0.4);
   color: #bb999c;
+  color: rgba(255, 255, 255, 0.4);
+
   @media screen and (max-width: 800px) {
     font-size: 1em;
   }
