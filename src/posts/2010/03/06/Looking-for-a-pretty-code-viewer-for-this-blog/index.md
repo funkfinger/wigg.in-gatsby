@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Looking for a pretty code viewer for this blog...
-date: "2010-03-07"
+date: '2010-03-07'
 tags:
   - code
   - code
@@ -14,7 +14,7 @@ tags:
 
 Here's some code as a test:
 
-<pre lang="ruby" line="1">
+```ruby
 require File.dirname(__FILE__) + '/../test_helper.rb'
 
 class FundastacheTest < Test::Unit::TestCase
@@ -33,13 +33,13 @@ class FundastacheTest < Test::Unit::TestCase
     get '/does_not_exist'
     assert !last_response.ok?
   end
-  
+
   def test_custom_404_error
     get '/does_not_exist'
-    assert last_response.body.include?("what\'cha lookin\' for?")    
+    assert last_response.body.include?("what\'cha lookin\' for?")
   end
 
 end
-</pre>
+```
 
 and I want it to look nice. How can we do that with Wordpress?

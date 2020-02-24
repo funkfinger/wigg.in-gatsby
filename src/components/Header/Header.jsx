@@ -14,6 +14,7 @@ const H1Styled = styled.h1`
   color: #e88d67;
   // color: rgba(255, 255, 255, 0.6);
   color: #d6ce15;
+  color: #e69419;
   margin: 0;
   margin-top: 1em;
   text-align: center;

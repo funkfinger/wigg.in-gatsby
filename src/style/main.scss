@@ -1,3 +1,5 @@
+$code-color: #222;
+$code-background-color: #ccc;
 /* reset */
 * {
   box-sizing: border-box;
@@ -25,22 +27,22 @@ html {
 
   pre {
     padding: 1em;
-    border: 1px #aaa solid;
+    border: 1px $code-background-color solid;
     max-width: 100%;
     overflow: auto;
-    background-color: #aaa;
-    color: #333;
+    background-color: $code-background-color;
+    color: $code-color;
     border: 1px #fff solid;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25),
       0 6px 20px 0 rgba(0, 0, 0, 0.25);
   }
 
   code {
-    background-color: #aaa;
+    background-color: $code-background-color;
     display: inline;
     // overflow: auto;
     white-space: pre-wrap;
-    color: #333;
+    color: $code-color;
     padding: 0.2em 0.25em;
     margin: 0 0.1em;
     border: 1px #fff solid;
@@ -49,9 +51,9 @@ html {
   }
 
   pre > code {
+    font-size: 1.2em;
     border: none;
     box-shadow: none;
-    color: #3a5372;
   }
 
   .post img {
@@ -81,28 +83,6 @@ html {
     color: #77a8e3;
     :visited {
       color: #6393ce;
-      // color: #918e44;
     }
   }
 }
-
-// /* Color Theme Swatches in Hex */
-// .8-COO03572-1-hex { color: #F29F05; }
-// .8-COO03572-2-hex { color: #F27405; }
-// .8-COO03572-3-hex { color: #D93D04; }
-// .8-COO03572-4-hex { color: #8C0E03; }
-// .8-COO03572-5-hex { color: #590202; }
-
-// /* Color Theme Swatches in RGBA */
-// .8-COO03572-1-rgba { color: rgba(242, 159, 5, 1); }
-// .8-COO03572-2-rgba { color: rgba(242, 116, 5, 1); }
-// .8-COO03572-3-rgba { color: rgba(217, 61, 4, 1); }
-// .8-COO03572-4-rgba { color: rgba(140, 14, 3, 1); }
-// .8-COO03572-5-rgba { color: rgba(89, 2, 2, 1); }
-
-// /* Color Theme Swatches in HSLA */
-// .8-COO03572-1-hsla { color: hsla(38, 95, 48, 1); }
-// .8-COO03572-2-hsla { color: hsla(28, 95, 48, 1); }
-// .8-COO03572-3-hsla { color: hsla(16, 96, 43, 1); }
-// .8-COO03572-4-hsla { color: hsla(4, 95, 28, 1); }
-// .8-COO03572-5-hsla { color: hsla(0, 95, 17, 1); }

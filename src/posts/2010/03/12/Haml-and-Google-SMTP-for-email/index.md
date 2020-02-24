@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Haml and Google SMTP for email
-date: "2010-03-13"
+date: '2010-03-13'
 tags:
   - code
   - email
@@ -17,22 +17,22 @@ I first thought that I would have to use ERB to render non-HTML-like templates. 
 
 Here's a simple example haml template for email:
 
-<pre lang="haml" line="1">
+```haml
 :plain
-  Welcome #{@user.username} to Fund-A-Stache! 
+  Welcome #{@user.username} to Fund-A-Stache!
 
   click the following link to activate your account:
 
   #{activation_link(@user)}
-</pre>
+```
 
 I'm also using Google SMTP for email. That way I can send email from my home (which blocks SMTP traffic). This may change, but just so I can remember why I'm doing this, here's the Pony call:
 
-<pre lang="ruby" line="1">
+```ruby
 Pony.mail(
-  :to=>@user.email, 
-  :from=>'user@example.org', 
-  :subject=>'Welcome', 
+  :to=>@user.email,
+  :from=>'user@example.org',
+  :subject=>'Welcome',
   :body=>(haml :registration_email, :layout=>false),
   :content_type=>'text/html',
   :via=>:smtp,
@@ -46,4 +46,4 @@ Pony.mail(
     :domain=>"example.org" # the HELO domain provided by the client to the server
   }
 )
-</pre>
+```

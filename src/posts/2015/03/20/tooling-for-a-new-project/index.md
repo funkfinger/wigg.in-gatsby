@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Tooling for a new project - choices, choices, choices..."
+title: 'Tooling for a new project - choices, choices, choices...'
 comments: true
 date: 2015-03-20 17:51:40
-categories: javascript, tooling, testing, frameworks
+categories: [javascript, tooling, testing, frameworks]
 ---
 
 Here's the front-end development stack that I'm leaning towards for a new build that I'm contemplating (at this specific momement):

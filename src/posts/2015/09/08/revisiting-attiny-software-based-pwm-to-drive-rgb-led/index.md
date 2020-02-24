@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Revisiting ATtiny85 Software-Based PWM to Drive RGB LED"
+title: 'Revisiting ATtiny85 Software-Based PWM to Drive RGB LED'
 comments: true
 date: 2015-09-08 20:34:06
-categories: (attiny85,avr-gcc,pwm,software-based-pwm)
+categories: [attiny85, avr-gcc, pwm, software-based-pwm]
 ---
 
 I'm digging up some old code that I did a long time ago - It's a software-based pulse width modulator (PWM) for AVR microprocessors. The basics came from [this technote](http://www.atmel.com/Images/doc8020.pdf), and the code was based on [this sample project](http://www.avrfreaks.net/sites/default/files/AVR136.zip) from AVR.

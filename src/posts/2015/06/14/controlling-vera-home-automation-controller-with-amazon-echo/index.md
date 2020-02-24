@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Controlling Vera home automation Z-Wave controller with Amazon Echo by running an emulator on a Raspberry Pi"
+title: 'Controlling Vera home automation Z-Wave controller with Amazon Echo by running an emulator on a Raspberry Pi'
 comments: true
 date: 2015-06-14 10:02:14
-categories: home-automation
+categories: [home-automation]
 tags:
   - vera
   - amazon echo

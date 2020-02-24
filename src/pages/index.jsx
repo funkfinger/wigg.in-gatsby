@@ -22,6 +22,7 @@ const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query AllPostsQuery {
       allPostsQuery: allMdx(
+        filter: { fields: { slug: { regex: "/^/[0-9]/" } } }
         sort: { order: DESC, fields: [frontmatter___date] }
       ) {
         edges {

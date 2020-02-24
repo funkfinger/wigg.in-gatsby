@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Testing Rack::Flash in Sinatra
-date: "2010-03-08"
+date: '2010-03-08'
 tags:
   - code
   - code
@@ -13,7 +13,7 @@ tags:
 
 Here's a slightly dumb way to test Rack::Flash in a Sinatra app...
 
-<pre lang="ruby" line="1">
+```ruby
 require File.dirname(__FILE__) + '/../test_helper.rb'
 
 module FundAStache
@@ -35,7 +35,7 @@ class FundastacheTest < Test::Unit::TestCase
   def app
     @app ||= FundAStache::Application
   end
-    
+
   def test_rack_flash_working
     # see fake route above...
     get '/rack_flash_test'
@@ -43,4 +43,4 @@ class FundastacheTest < Test::Unit::TestCase
     assert last_response.body.include?("rack flash is working")
   end
 end
-</pre>
+```
