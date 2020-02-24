@@ -1,1 +1,104 @@
-undefined
+[
+  {
+    "source": "/avr/dragon/attiny/avrdude/avr-gcc/OSX/2015/08/29/avr-dragon-and-os-x-trying-it-out-again",
+    "status": "301",
+    "target": "/2015/08/29/avr-dragon-and-os-x-trying-it-out-again",
+    "condition": null
+  },
+  {
+    "source": "/arduino/avr dragon/attiny/osx/2015/08/31/getting-my-avr-dragon-to-talk-to-the-arduino-ide",
+    "status": "301",
+    "target": "/2015/08/31/getting-my-avr-dragon-to-talk-to-the-arduino-ide",
+    "condition": null
+  },
+  {
+    "source": "/attiny85/trinket/avr/fuses/2015/09/03/setting-my-attiny-fuses-to-mimic-the-adafruit-trinket",
+    "status": "301",
+    "target": "/2015/09/03/setting-my-attiny-fuses-to-mimic-the-adafruit-trinket",
+    "condition": null
+  },
+  {
+    "source": "/attiny85/trinket/adafruit/avr/fuses/neopixel/2015/09/15/update-to-using-an-attiny-in-a-similar-way-to-an-adafruit-trinket",
+    "status": "301",
+    "target": "/2015/09/15/update-to-using-an-attiny-in-a-similar-way-to-an-adafruit-trinket",
+    "condition": null
+  },
+  {
+    "source": "/platformio/arduino/avr/es8266/2015/09/30/platformio-investigation",
+    "status": "301",
+    "target": "/2015/09/30/platformio-investigation",
+    "condition": null
+  },
+  {
+    "source": "/arduino/esp8266/ide/2015/12/30/adafruit-feather-esp-module---arduino-ide-settings",
+    "status": "301",
+    "target": "/2015/12/30/adafruit-feather-esp-module---arduino-ide-settings",
+    "condition": null
+  },
+  {
+    "source": "/raspberry pi/webcam/2016/03/09/display-raspberry-pi-webcam-video-to-screen",
+    "status": "301",
+    "target": "/2016/03/09/display-raspberry-pi-webcam-video-to-screen",
+    "condition": null
+  },
+  {
+    "source": "/attiny85/trinket/po-12/2016/03/31/tap-bpm-for-teenage-engineering-pocket-operator",
+    "status": "301",
+    "target": "/2016/03/31/tap-bpm-for-teenage-engineering-pocket-operator",
+    "condition": null
+  },
+  {
+    "source": "/attiny85/i2c/lcd/2016/04/18/mostly-no-arduino-attiny-ic-lcd",
+    "status": "301",
+    "target": "/2016/04/18/mostly-no-arduino-attiny-ic-lcd",
+    "condition": null
+  },
+  {
+    "source": "/pocket operator/teenage engineering/bpm/sync/2016/04/25/teenage-engineering-pocket-operator-tap-sync",
+    "status": "301",
+    "target": "/2016/04/25/teenage-engineering-pocket-operator-tap-sync",
+    "condition": null
+  },
+  {
+    "source": "/arduino/esp8266/platformio/2016/01/28/using-platformio-with-esp-arduino--rc-release-candidate",
+    "status": "301",
+    "target": "/2016/01/28/using-platformio-with-esp-arduino--rc-release-candidate",
+    "condition": null
+  },
+  {
+    "source": "/es8266/dht22/arduino/iot/temperature/humidity/server/2015/09/30/es8266--dht22-wi-fi--temperature--humidity-server-example-mashup",
+    "status": "301",
+    "target": "/2015/09/30/es8266--dht22-wi-fi--temperature--humidity-server-example-mashup",
+    "condition": null
+  },
+  {
+    "source": "/oshpark/pcb/avr/dragon/2016/09/09/avr-dragon-quick-connector-pcb-from-osh-park",
+    "status": "301",
+    "target": "/2016/09/09/avr-dragon-quick-connector-pcb-from-osh-park",
+    "condition": null
+  },
+  {
+    "source": "/halloween/diy/hot glue/2016/09/09/hot-glue-halloween-cobwebs",
+    "status": "301",
+    "target": "/2016/09/09/hot-glue-halloween-cobwebs",
+    "condition": null
+  },
+  {
+    "source": "/aws/lambda/2016/11/16/dipping-a-toe-in-the-amazon-lambda-waters",
+    "status": "301",
+    "target": "/2016/11/16/dipping-a-toe-in-the-amazon-lambda-waters",
+    "condition": null
+  },
+  {
+    "source": "/trinket/teenage engineering/sync/tap/bpm/2017/02/21/adafruit-trinket-based-sync-track-for-teenage-engineering-pocket-operators",
+    "status": "301",
+    "target": "/2017/02/21/adafruit-trinket-based-sync-track-for-teenage-engineering-pocket-operators",
+    "condition": null
+  },
+  {
+    "source": "/oshpark/pcb/avr/dragon/2016/11/29/avr-dragon-quick-connector-for-attiny-and-attiny--attiny",
+    "status": "301",
+    "target": "/2016/11/29/avr-dragon-quick-connector-for-attiny-and-attiny--attiny",
+    "condition": null
+  }
+]
