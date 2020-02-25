@@ -13,7 +13,7 @@ export default styled.div`
   h3 {
     font-weight: normal;
     margin-bottom: 0.3em;
-    line-height: 1em;
+    // line-height: 1em;
     color: #e69419;
     &: {
       text-decoration: none;

@@ -18,17 +18,17 @@ This <strong>MOSTLY</strong> is working, so, here's what I found when trying to 
 
 First, you need to initiate a connection:
 
-<pre lang='ruby'>
+```ruby
     get '/:blog_name/facebook/oauth/create' do
       redirect "https://graph.facebook.com/oauth/authorize?client_id=##FACEBOOK API KEY##&redirect_uri=##CALLBACK URL##&scope=publish_stream,user_status,user_photos,user_about_me"
     end
-</pre>
+```
 
-where <code>##FACEBOOK API KEY##</code> = your applications API key (mine is a 32 digit hex value) and <code>##CALLBACK URL##</code> = the URL that will be processing the next step. Also, the scope value let's you get more access to the user's account. Check their <a href='http://developers.facebook.com/docs/authentication/permissions'>extended permissions</a> doc for more info.
+where `##FACEBOOK API KEY##` = your applications API key (mine is a 32 digit hex value) and `##CALLBACK URL##` = the URL that will be processing the next step. Also, the scope value let's you get more access to the user's account. Check their <a href='http://developers.facebook.com/docs/authentication/permissions'>extended permissions</a> doc for more info.
 
-Next, you need to process what comes back from Facebook. I am stashing what comes back in the DB (the <code> FacebookOauthToken</code> model). Also using the <code>Mechanize</code> gem which is pretty silly. Some of the code below is specific to my app, so ignore those bits...
+Next, you need to process what comes back from Facebook. I am stashing what comes back in the DB (the `FacebookOauthToken` model). Also using the `Mechanize` gem which is pretty silly. Some of the code below is specific to my app, so ignore those bits...
 
-<pre lang='ruby'>
+```ruby
     get '/:blog_name/facebook/oauth/callback' do
       if !params['code'].blank?
 url="https://graph.facebook.com/oauth/access_token"
@@ -73,10 +73,9 @@ flash[:error]="There was a problem connecting to Facebook"
 redirect "/#{@blog.url_name}/"
       end
     end
+```
 
-</pre>
+Where `##CLIENT ID##` = your <strong>Application ID</strong> (mine is a 12 digit numeric value) and `## CLIENT SECRET ##` = your <strong>Application Secret</strong> (mine is a 32 digit hex value).
 
-Where <code>##CLIENT ID##</code> = your <strong>Application ID</strong> (mine is a 12 digit numeric value) and <code>## CLIENT SECRET ##</code> = your <strong>Application Secret</strong> (mine is a 32 digit hex value).
-
-Once you have an <code>access_token</code> you should be able to make calls to URLs like this: <code>
-"https://graph.facebook.com/me/?access_token=#{access_token}"</code>. The <code>/me</code> path is the connected user's data and I'm grabbing their Facebook ID from the returned JSON for use elsewhere.
+Once you have an `access_token` you should be able to make calls to URLs like this: `
+"https://graph.facebook.com/me/?access_token=#{access_token}"`. The `/me` path is the connected user's data and I'm grabbing their Facebook ID from the returned JSON for use elsewhere.

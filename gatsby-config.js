@@ -61,6 +61,43 @@ module.exports = {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
+            resolve: 'gatsby-remark-embed-gist',
+            options: {
+              username: 'funkfinger',
+              includeDefaultCss: true,
+            },
+          },
+          // {
+          //   resolve: 'gatsby-remark-prismjs',
+          //   options: {
+          //     classPrefix: 'language-',
+          //     inlineCodeMarker: null,
+          //     aliases: {},
+          //     showLineNumbers: false,
+          //     noInlineHighlight: false,
+          //     languageExtensions: [
+          //       {
+          //         language: 'superscript',
+          //         extend: 'javascript',
+          //         definition: {
+          //           superscript_types: /(SuperType)/,
+          //         },
+          //         insertBefore: {
+          //           function: {
+          //             superscript_keywords: /(superif|superelse)/,
+          //           },
+          //         },
+          //       },
+          //     ],
+          //     prompt: {
+          //       user: 'root',
+          //       host: 'localhost',
+          //       global: false,
+          //     },
+          //     escapeEntities: {},
+          //   },
+          // },
+          {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: imageMaxWidth,

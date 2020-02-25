@@ -67,12 +67,18 @@ If you do use Platformio, here are the build commands...
 
 To build:
 
-    platformio run
+```
+platformio run
+```
 
 To burn (Trinket needs to be freshly reset to enter boot loader mode - pulsating red LED):
 
-    platformio run -t program
+```
+platformio run -t program
+```
 
 To clean:
 
-    platformio run -t clean
+```
+platformio run -t clean
+```

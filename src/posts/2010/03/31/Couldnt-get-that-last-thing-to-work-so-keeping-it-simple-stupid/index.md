@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Couldn't get that last thing to work so keeping it simple (stupid)
-date: "2010-04-01"
+date: '2010-04-01'
 tags:
   - before-filter
   - code
@@ -17,7 +17,7 @@ This could undoubtedly be more elegant, but it's late and I want it to work now.
 
 Setting up a before filter:
 
-<pre lang='ruby' line='1'>
+```ruby
 before do
   # remove and grab the file extension
   request.path_info.sub! %r{\.([^\./]+)$}, ''
@@ -25,11 +25,11 @@ before do
   @charset=mime_type($1) || 'text/html'
   content_type @charset, :charset => 'utf-8'
 end
-</pre>
+```
 
 and using a case statement:
 
-<pre lang='ruby' line='1'>
+```ruby
 get "/home" do
   case @format
   when 'html'
@@ -41,4 +41,4 @@ get "/home" do
     pass
   end
 end
-</pre>
+```

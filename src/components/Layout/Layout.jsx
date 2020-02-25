@@ -2,9 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components';
+import { MDXProvider } from '@mdx-js/react';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import Hilight from '../Highlight';
+
+const components = {
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  pre: props => <div {...props} />,
+  code: Hilight,
+};
 
 const ContainerDiv = styled.div`
   max-width: 900px;
@@ -19,24 +27,28 @@ const ContainerDiv = styled.div`
   background-color: #3a5372;
 `;
 
-const InnerContainerDiv = styled.div``;
+const InnerContainerDiv = styled.div`
+  max-width: 100%;
+`;
 
 const StyledMain = styled.main``;
 
 const Layout = ({ children, title }) => {
   return (
-    <ContainerDiv className="layout">
-      <InnerContainerDiv className="inner-container">
-        <Helmet>
-          <title>{title}</title>
-        </Helmet>
-        <Header />
-        <StyledMain>
-          <div>{children}</div>
-        </StyledMain>
-        <Footer />
-      </InnerContainerDiv>
-    </ContainerDiv>
+    <MDXProvider components={components}>
+      <ContainerDiv className="layout">
+        <InnerContainerDiv className="inner-container">
+          <Helmet>
+            <title>{title}</title>
+          </Helmet>
+          <Header />
+          <StyledMain>
+            <div>{children}</div>
+          </StyledMain>
+          <Footer />
+        </InnerContainerDiv>
+      </ContainerDiv>
+    </MDXProvider>
   );
 };
 

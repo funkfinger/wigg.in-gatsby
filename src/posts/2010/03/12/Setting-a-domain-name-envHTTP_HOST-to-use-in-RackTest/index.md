@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting a domain name (env['HTTP_HOST']) to use in Rack::Test
-date: "2010-03-13"
+date: '2010-03-13'
 tags:
   - code
   - env
@@ -14,7 +14,7 @@ tags:
 
 This may not be the best way to do this, but this is what I used at the top of my test file so that a helper method has a value for Rack's env['HTTP_HOST']:
 
-<pre lang="ruby" line="1">
+```ruby
 class FundastacheUserTest < Test::Unit::TestCase
   ...
   def env
@@ -22,11 +22,11 @@ class FundastacheUserTest < Test::Unit::TestCase
     last_request.env
   end
   ...
-</pre>
+```
 
 The test tests to see that using the activation link (that a user gets in an email) activates the user. It looks something like this:
 
-<pre lang="ruby" line="1">
+```ruby
   def test_using_activation_link_should_activate_account
     create_user
     user=User.first
@@ -39,14 +39,13 @@ The test tests to see that using the activation link (that a user gets in an ema
     user=User.first
     assert user.activated
   end
-</pre>
+```
 
 and the helper method looks something like this:
 
-<pre lang="ruby" line="1">
-
+```ruby
 module FundAStache
-  module Helpers    
+  module Helpers
     ...
     def activation_link(user)
       "http://#{env['HTTP_HOST']}/user/activate/#{user.activation_token}"
@@ -54,4 +53,4 @@ module FundAStache
     ...
   end
 end
-</pre>
+```

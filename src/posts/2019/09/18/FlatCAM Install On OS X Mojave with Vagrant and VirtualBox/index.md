@@ -24,68 +24,78 @@ You'll probably be asked for your user password - I was... Also, this seems to t
 
 You can probably put this just about anywhere, but I went with a folder called `vms` in my root user folder:
 
-    mkdir ~/vms
-    mkdir ~/vms/flatcam
-    cd ~/vms/flatcam
-    vagrant box add ubuntu/bionic64
-    vagrant init ubuntu/bionic64
+```bash
+mkdir ~/vms
+mkdir ~/vms/flatcam
+cd ~/vms/flatcam
+vagrant box add ubuntu/bionic64
+vagrant init ubuntu/bionic64
+```
 
 That last command will create a very basic `Vagrantfile` with lots of comments. Replace it's contents with something like this:
 
-    # -*- mode: ruby -*-
-    # vi: set ft=ruby :
+```ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
-    Vagrant.configure("2") do |config|
-      config.vm.box = "ubuntu/bionic64"
-      config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
-      config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "~/.ssh/id_rsa"]
-      config.ssh.insert_key = false
-      config.vm.provision :shell, path: "bootstrap.sh"
-      config.ssh.forward_x11 = true
-    end
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+    config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "~/.ssh/id_rsa"]
+    config.ssh.insert_key = false
+    config.vm.provision :shell, path: "bootstrap.sh"
+    config.ssh.forward_x11 = true
+end
+```
 
 Now create that above mentioned `bootstrap.sh` file in the same folder as the `Vagrantfile` and make it's contents:
 
-    #!/usr/bin/env bash
+```bash
+#!/usr/bin/env bash
 
-    # prevent `default: dpkg-preconfigure: unable to re-open stdin: No such file or directory` errors
-    export DEBIAN_FRONTEND=noninteractive
+# prevent `default: dpkg-preconfigure: unable to re-open stdin: No such file or directory` errors
+export DEBIAN_FRONTEND=noninteractive
 
-    apt-get update -y
-    apt-get install -y git
+apt-get update -y
+apt-get install -y git
 
-    apt-get install -y libpng-dev
-    apt-get install -y libfreetype6
-    apt-get install -y libfreetype6-dev
-    apt-get install -y python3-dev
-    apt-get install -y python3-simplejson
-    apt-get install -y python3-pyqt4
-    apt-get install -y python3-numpy
-    apt-get install -y python3-scipy
-    apt-get install -y python3-matplotlib
-    apt-get install -y libgeos-dev
-    apt-get install -y python-shapely
-    apt-get install -y python-pip
-    apt-get install -y libspatialindex-dev
-    apt-get install -y python3-tk
-    apt-get install -y python3-shapely
-    apt-get install -y python3-rtree
-    apt-get install -y python3-svg.path
+apt-get install -y libpng-dev
+apt-get install -y libfreetype6
+apt-get install -y libfreetype6-dev
+apt-get install -y python3-dev
+apt-get install -y python3-simplejson
+apt-get install -y python3-pyqt4
+apt-get install -y python3-numpy
+apt-get install -y python3-scipy
+apt-get install -y python3-matplotlib
+apt-get install -y libgeos-dev
+apt-get install -y python-shapely
+apt-get install -y python-pip
+apt-get install -y libspatialindex-dev
+apt-get install -y python3-tk
+apt-get install -y python3-shapely
+apt-get install -y python3-rtree
+apt-get install -y python3-svg.path
 
-    cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
-    git clone https://bitbucket.org/jpcgt/flatcam.git /vagrant/flatcam
+cat /vagrant/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+git clone https://bitbucket.org/jpcgt/flatcam.git /vagrant/flatcam
+```
 
 These are the commands that will setup (provision) the virtual machine.
 
 Now, comes a big one - start the vagrant vm and set it up (provision):
 
-    vagrant up --provision
+```bash
+vagrant up --provision
+```
 
 # Start XQuartz and FlatCAM
 
 In order to start FlatCAM, you'll need to run it from the X Window System [XQuartz](https://www.xquartz.org). This should have been installed in the above brew command. In my case, it was installed in `/Applications/Utilities/`. Once it starts, you will have an `Applications` menu. Under that select `Terminal` and run the following command:
 
-    ssh -X -p 2222 vagrant@localhost /vagrant/flatcam/flatcam
+```bash
+ssh -X -p 2222 vagrant@localhost /vagrant/flatcam/flatcam
+```
 
 This will require you to add the new fingerprint to the `~/.ssh/known_hosts` file. Type `yes` and if all goes well, FlatCAM should start. If it doesn't, I probably can't help you just because I don't know enough about this stuff...
 
@@ -95,7 +105,7 @@ The next time you run this command, you won't have to acknowledge (type yes) whi
 
 # Voila!
 
-![FlatCAM running on OS X Mojave](https://s3.amazonaws.com/media.jaywiggins.com/images/flatcam_on_os_x.png "FlatCAM running on OS X Mojave")
+![FlatCAM running on OS X Mojave](https://s3.amazonaws.com/media.jaywiggins.com/images/flatcam_on_os_x.png 'FlatCAM running on OS X Mojave')
 
 # Things to know...
 

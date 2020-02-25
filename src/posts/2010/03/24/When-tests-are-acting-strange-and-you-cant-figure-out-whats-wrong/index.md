@@ -1,7 +1,7 @@
 ---
 layout: post
 title: When tests are acting strange and you can't figure out what's wrong...
-date: "2010-03-25"
+date: '2010-03-25'
 tags:
   - bug
   - class
@@ -16,9 +16,9 @@ example:
 
 My <strong>BlogPost</strong> class was mis-titled...
 
-<pre lang='ruby' line='1'>
+```ruby
 class FundastacheSiteTest < Test::Unit::TestCase
 ...
-</pre>
+```
 
 There went an hour...
