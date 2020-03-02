@@ -16,4 +16,4 @@ Here's a photo of the protoboard:
 
 and here's the quick mashup code of the two example:
 
-<script src="https://gist.github.com/funkfinger/4b260699a1c22a31279a.js"></script>
+<Gist id="4b260699a1c22a31279a" />

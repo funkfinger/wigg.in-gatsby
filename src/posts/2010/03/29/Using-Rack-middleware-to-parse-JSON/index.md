@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Rack middleware to parse JSON
-date: "2010-03-30"
+date: '2010-03-30'
 tags:
   - code
   - json
@@ -16,23 +16,23 @@ tags:
 
 In attempting to AJAX-ize the site, I had the desire to handle JSON as if it were form post data. Queue a Rack middleware solution. <code><a href='http://github.com/rack/rack-contrib'>rack-contrib</a></code> contains a bunch of common middleware extensions, one being the horribly named <code>PostBodyContentTypeParser</code>. To get this working I added:
 
-<pre lang='ruby' line='1'>
+```ruby
 require 'rack/contrib'
-</pre>
+```
 
 with all of the rest of the required files.
 
 Added:
 
-<pre lang='ruby' line='1'>
+```ruby
 use Rack::PostBodyContentTypeParser
-</pre>
+```
 
 to my application class
 
 And went about <strong>over</strong> testing it like so:
 
-<pre lang='ruby' line='1'>
+```ruby
 def test_json_creates_params_hash
   params_hash={"user"=>{"username"=>"testuser","email"=>"test@test.com","password"=>"pass1","password_confirmation"=>"pass1"}}
   post '/test_json', params_hash
@@ -50,4 +50,4 @@ def test_json_creates_params_hash
   assert_equal params_hash, last_request.params
   assert last_response.ok?
 end
-</pre>
+```

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Update to using an ATtiny85 in a Similar Way To An Adafruit Trinket - specifically to run the Adafruit Neopixel library"
+title: 'Update to using an ATtiny85 in a Similar Way To An Adafruit Trinket - specifically to run the Adafruit Neopixel library'
 comments: true
 date: 2015-09-15 20:35:28
 categories: [attiny85, trinket, adafruit, avr, fuses, neopixel]
@@ -40,4 +40,4 @@ Basically, all I believe that did was set the fuses correctly, but without too m
 
 Incidentally, the setup (code) for the Neopixel library looks like this:
 
-<script src="https://gist.github.com/funkfinger/738bbd3fa8a6183fd47f.js"></script>
+<Gist id="738bbd3fa8a6183fd47f" />

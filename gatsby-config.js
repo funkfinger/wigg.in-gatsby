@@ -60,13 +60,14 @@ module.exports = {
         remarkPlugins: [emoji],
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-embed-gist',
-            options: {
-              username: 'funkfinger',
-              includeDefaultCss: true,
-            },
-          },
+          // {
+          //   resolve: 'gatsby-remark-embed-gist',
+          //   options: {
+          //     username: 'funkfinger',
+          //     includeDefaultCss: false,
+          //   },
+          // },
+
           // {
           //   resolve: 'gatsby-remark-prismjs',
           //   options: {

@@ -34,4 +34,4 @@ and to fix it I would move my decloration of the varabile outside of the loop. T
 
 Solution was to add <code>-std=c99</code> to the Makefile. My new AVR Makefile now looks like this..
 
-<script src="https://gist.github.com/1028804.js?file=gistfile1.mak"></script>
+<Gist id="1028804" file="gistfile1.mak" />

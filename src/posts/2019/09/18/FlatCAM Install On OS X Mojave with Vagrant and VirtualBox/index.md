@@ -16,7 +16,9 @@ I already had these installed, so I couldn't tell you the specifics on how that 
 
 This covers the first three dependencies, but you'll have to do `xquartz` on your own:
 
-    brew cask install xquartz
+```bash
+brew cask install xquartz
+```
 
 You'll probably be asked for your user password - I was... Also, this seems to take a while.
 

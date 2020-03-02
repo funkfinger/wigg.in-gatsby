@@ -8,4 +8,4 @@ categories: [jekyll, rake]
 
 Since <code>jekyll</code> is a <code>ruby</code> tool, I'm using <code>rake</code> to manage it. Here's my <code>Rakefile</code>
 
-<script src="https://gist.github.com/funkfinger/c94a9cab44c8c666bcab.js"></script>
+<Gist id="c94a9cab44c8c666bcab" />
