@@ -18,22 +18,9 @@ const components = {
   Gist,
 };
 
-const ContainerDiv = styled.div`
-  // max-width: 900px;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // margin: 0 auto;
-  // padding: 0 30px;
-  // background-color: #0677a1;
-  // background-color: #2d4159;
-  // background-color: #3a5372;
-  // background-color: #3a5372;
-`;
+const ContainerDiv = styled.div``;
 
-const InnerContainerDiv = styled.div`
-  // max-width: 100%;
-`;
+const InnerContainerDiv = styled.div``;
 
 const StyledMain = styled.main``;
 
@@ -46,9 +33,7 @@ const Layout = ({ children, title }) => {
             <title>{title}</title>
           </Helmet>
           <Header />
-          <StyledMain>
-            <div>{children}</div>
-          </StyledMain>
+          <StyledMain className="main-content">{children}</StyledMain>
           <Footer />
         </InnerContainerDiv>
       </ContainerDiv>

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import HeroImage from '../components/HeroImage/HeroImage';
 
-import PostDivStyled from '../components/StyledComponents/PostDivStyled';
 import PostH2Styled from '../components/StyledComponents/PostH2Styled';
 import PostH4Styled from '../components/StyledComponents/PostH4Styled';
 import PostStyled from '../components/StyledComponents/PostStyled';
@@ -36,7 +35,7 @@ const IndexPage = () => {
               title
               heroImage {
                 childImageSharp {
-                  fluid(maxWidth: 1000) {
+                  fluid(maxWidth: 600) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -50,31 +49,29 @@ const IndexPage = () => {
 
   const allPosts = data.allPostsQuery.edges;
   const posts = allPosts.map(({ node }) => {
-    // const heroImage = node.frontmatter.heroImage ? (
-    //   <Img fluid={node.frontmatter.heroImage.childImageSharp.fluid} />
-    // ) : (
-    //   <div />
-    // );
-
     return (
-      <PostDivStyled key={node.fields.slug}>
+      <div className="post-container" key={node.fields.slug}>
         <LinkStyled to={node.fields.slug}>
           <HeroImage heroImage={node.frontmatter.heroImage} />
         </LinkStyled>
         <PostStyled>
           <LinkStyled to={node.fields.slug}>
-            <PostH2Styled>{node.frontmatter.title}</PostH2Styled>
-            <PostH4Styled>{node.frontmatter.date}</PostH4Styled>
+            <PostH2Styled className="post-title">
+              {node.frontmatter.title}
+            </PostH2Styled>
+            <PostH4Styled className="post-date">
+              {node.frontmatter.date}
+            </PostH4Styled>
           </LinkStyled>
           <PostTextDivStyled>{node.excerpt}</PostTextDivStyled>
           <MoreDivStyled>
             <LinkStyled to={node.fields.slug}>more...</LinkStyled>
           </MoreDivStyled>
         </PostStyled>
-      </PostDivStyled>
+      </div>
     );
   });
-  return <div>{posts}</div>;
+  return <div className="main-index-content">{posts}</div>;
 };
 
 export default IndexPage;

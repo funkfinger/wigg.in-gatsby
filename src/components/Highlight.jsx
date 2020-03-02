@@ -8,6 +8,12 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/dracula';
 import styled from 'styled-components';
 
+import Prism from 'prism-react-renderer/prism';
+
+(typeof global !== 'undefined' ? global : window).Prism = Prism;
+
+require('prismjs/components/prism-ruby');
+
 const CodeDivStyled = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,7 +41,7 @@ const PreStyled = styled.pre`
 `;
 
 export default ({ children, className = 'language-bash' }) => {
-  console.log(`classname: ${className}`);
+  console.log(`className: ${className}`);
   const language = className.replace(/language-/, '');
   return (
     <CodeDivStyled>
@@ -45,21 +51,24 @@ export default ({ children, className = 'language-bash' }) => {
         language={language}
         theme={theme}
       >
-        {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <PreStyled
-            className={className}
-            style={{ ...style, padding: '20px' }}
-          >
-            {tokens.map((line, i) => (
-              <div key={i} {...getLineProps({ line, key: i })}>
-                <LineNo>{i + 1}</LineNo>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
-          </PreStyled>
-        )}
+        {({ className, style, tokens, getLineProps, getTokenProps }) => {
+          tokens.pop();
+          return (
+            <PreStyled
+              className={className}
+              style={{ ...style, padding: '20px' }}
+            >
+              {tokens.map((line, i) => (
+                <div key={i} {...getLineProps({ line, key: i })}>
+                  <LineNo>{i + 1}</LineNo>
+                  {line.map((token, key) => (
+                    <span key={key} {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </PreStyled>
+          );
+        }}
       </Highlight>
     </CodeDivStyled>
   );

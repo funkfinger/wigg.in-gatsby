@@ -12,7 +12,14 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Sacramento', 'Open Sans', 'Roboto:300,400'],
+          families: [
+            // 'IBM Plex Mono',
+            'IBM Plex Sans:400,400i',
+            'Arvo',
+            // 'Sacramento',
+            // 'Open Sans',
+            // 'Roboto:300,400',
+          ],
         },
       },
     },

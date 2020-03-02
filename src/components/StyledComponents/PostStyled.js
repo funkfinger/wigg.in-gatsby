@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export default styled.div`
+  margin: 1em;
+
   // padding: 0.5em 2em;
   // width: 100%;
   // background-color: #2d4159;

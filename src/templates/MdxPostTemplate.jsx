@@ -4,7 +4,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import styled from 'styled-components';
 
 import HeroImage from '../components/HeroImage/HeroImage';
 
@@ -17,12 +16,12 @@ import PostStyled from '../components/StyledComponents/PostStyled';
 export const TemplatePure = ({ img, title, date, body }) => {
   // export const TemplatePure = ({ title, date }) => {
   return (
-    <PostDivStyled>
+    <PostDivStyled className="post-container single-post">
       <HeroImage className="hero-image" heroImage={img} />
       <PostStyled className="post">
-        <PostH2Styled>{title}</PostH2Styled>
-        <PostH4Styled>{date}</PostH4Styled>
-        <PostTextDivStyled>
+        <PostH2Styled className="post-title">{title}</PostH2Styled>
+        <PostH4Styled className="post-date">{date}</PostH4Styled>
+        <PostTextDivStyled className="post-content">
           <MDXRenderer>{body}</MDXRenderer>
         </PostTextDivStyled>
       </PostStyled>

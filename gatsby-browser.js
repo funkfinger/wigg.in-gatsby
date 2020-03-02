@@ -11,7 +11,7 @@ import Layout from './src/components/Layout/Layout';
 import 'prismjs/themes/prism-okaidia.css';
 // import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-// import './src/style/main.scss';
+import './src/style/main.scss';
 
 // props provide same data to Layout as Page element will get
 // including location, data, etc - you don't need to pass it
