@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-shadow */
 /* eslint-disable react/no-array-index-key */
@@ -16,32 +17,48 @@ require('prismjs/components/prism-ruby');
 
 const CodeDivStyled = styled.div`
   display: flex;
-  flex-direction: column;
-`;
-
-const LineNo = styled.span`
-  display: inline-block;
-  width: 2em;
-  user-select: none;
-  opacity: 0.3;
-`;
-
-const PreStyled = styled.pre`
-  text-align: left;
-  margin: 1em 0;
-  padding: 0.5em;
-  max-width: 100%;
-  & .token-line {
-    line-height: 1.3em;
-    height: 1.3em;
-  }
-  // white-space: pre-wrap;
-  overflow-x: auto;
-  max-width: 100%;
+  flex-direction: row;
+  width: 100%;
 `;
 
 export default ({ children, className = 'language-bash' }) => {
-  console.log(`className: ${className}`);
+  const createCodeLines = (
+    { className, style, tokens, getLineProps, getTokenProps },
+    language,
+  ) => {
+    tokens.pop();
+    let i = 0;
+    const codeBlock = (
+      <pre className={className} style={style}>
+        {tokens.map(line => {
+          i += 1;
+          return (
+            <div {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          );
+        })}
+      </pre>
+    );
+
+    const lineNumbers = (
+      <pre className={className} style={style}>
+        {[...Array(i)].map((_, i) => (
+          <div key={i + 1}>{i + 1}</div>
+        ))}
+      </pre>
+    );
+
+    return (
+      <CodeDivStyled>
+        <div className="line-numbers">{lineNumbers}</div>
+        {codeBlock}
+      </CodeDivStyled>
+    );
+  };
+
   const language = className.replace(/language-/, '');
   return (
     <CodeDivStyled>
@@ -51,24 +68,7 @@ export default ({ children, className = 'language-bash' }) => {
         language={language}
         theme={theme}
       >
-        {({ className, style, tokens, getLineProps, getTokenProps }) => {
-          tokens.pop();
-          return (
-            <PreStyled
-              className={className}
-              style={{ ...style, padding: '20px' }}
-            >
-              {tokens.map((line, i) => (
-                <div key={i} {...getLineProps({ line, key: i })}>
-                  <LineNo>{i + 1}</LineNo>
-                  {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({ token, key })} />
-                  ))}
-                </div>
-              ))}
-            </PreStyled>
-          );
-        }}
+        {highlight => createCodeLines(highlight, language)}
       </Highlight>
     </CodeDivStyled>
   );

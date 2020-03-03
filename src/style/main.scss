@@ -192,6 +192,18 @@ html {
     margin-top: 0.25em;
     color: #999;
   }
+
+  .code-line {
+    display: flex;
+    flex-direction: row;
+    span {
+      display: block;
+    }
+  }
+
+  .line-numbers > pre {
+    color: rgba(255, 255, 255, 0.3) !important;
+  }
 }
 
 @import url('https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css');
