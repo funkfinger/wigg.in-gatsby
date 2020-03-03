@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AWS S3 using AWS/S3 Ruby gem
-date: "2010-03-22"
+date: '2010-03-22'
 tags:
   - amazon
   - aws
@@ -17,7 +17,7 @@ tags:
 
 working on storing files to Amazon's S3 web service. Here's what I've come up with so far:
 
-<pre lang='ruby' line='1'>
+```ruby
 require 'aws/s3'
 def aws_connect
   @aws_connect ||= AWS::S3::Base.establish_connection!(
@@ -30,12 +30,12 @@ def aws_upload(file,bucket=AWS_BUCKET)
   aws_connect
   AWS::S3::S3Object.store(file,open(file),bucket)
 end
-</pre>
+```
 
 then a:
 
-<pre lang='ruby' line='1'>
+```ruby
 aws_upload('test.txt')
-</pre>
+```
 
 Will upload the the file to the Amazon bucket. Pretty simple.

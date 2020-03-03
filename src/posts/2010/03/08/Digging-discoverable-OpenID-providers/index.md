@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Digging discoverable OpenID providers
-date: "2010-03-09"
+date: '2010-03-09'
 tags:
   - code
   - code
@@ -18,4 +18,4 @@ Here's a list of big-time OpenID providers that are discoverable. This means you
 	<li><b>myOpenID: </b>hhttp://myopenid.com</li>
 </ul>
 
-Additionally, if you have Google Apps, you can craft an OpenID URL like this: <code>https://www.google.com/accounts/o8/site-xrds?hd=example.com</code> --- Hmm, but it doesn't seem to work... will update if I figure it out.
+Additionally, if you have Google Apps, you can craft an OpenID URL like this: `https://www.google.com/accounts/o8/site-xrds?hd=example.com` --- Hmm, but it doesn't seem to work... will update if I figure it out.

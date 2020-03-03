@@ -11,7 +11,7 @@ tags:
 
 Looking for a reason that autotest is skipping some of my test files....
 
-<strong>UPDATE:</strong> Found the culprit. In my <code>.autotest</code> file I had some exclusions which were matching on the <strong>log</strong> in b<strong>log</strong>
+<strong>UPDATE:</strong> Found the culprit. In my `.autotest` file I had some exclusions which were matching on the <strong>log</strong> in b<strong>log</strong>
 
 ```ruby
 Autotest.add_hook :initialize do |autotest|

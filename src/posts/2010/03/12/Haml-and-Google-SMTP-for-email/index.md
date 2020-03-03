@@ -13,7 +13,7 @@ tags:
   - template
 ---
 
-I first thought that I would have to use ERB to render non-HTML-like templates. Not true. Haml let you do a <code>:plain</code> filter which is pretty much the same as using ERB templates.
+I first thought that I would have to use ERB to render non-HTML-like templates. Not true. Haml let you do a `:plain` filter which is pretty much the same as using ERB templates.
 
 Here's a simple example haml template for email:
 

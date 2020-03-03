@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Trying out Pony for email
-date: "2010-03-12"
+date: '2010-03-12'
 tags:
   - code
   - email
@@ -15,13 +15,13 @@ Email is going to be used to activate an account, and I'm leaning towards using 
 
 Here's how simple Pony is:
 
-<pre lang='ruby' line='1'>
+```ruby
 Pony.mail(:to => 'test@example.com', :from=>'test@example.com', :subject=>'spam', :body=>(erb :registration_email))
-</pre>
+```
 
 and here's how you can test it with the <strong>pony-test</strong> gem:
 
-<pre lang='ruby' line='1'>
+```ruby
   def test_valid_new_user_signup_should_create_email
     count=all_email.count
     create_user
@@ -32,10 +32,10 @@ and here's how you can test it with the <strong>pony-test</strong> gem:
     create_user
     assert_match /http\:\/\//, current_email.body
   end
-</pre>
+```
 
 Don't forget to nclude the Pony test helpers in your test class...
 
-<pre lang='ruby' line='1'>
+```ruby
 include Pony::TestHelpers
-</pre>
+```

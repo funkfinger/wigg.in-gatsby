@@ -32,6 +32,6 @@ and to fix it I would move my decloration of the varabile outside of the loop. T
 
 <blockquote>Back in the old days, when dinosaurs roamed the earth and programmers used punch cards, you were not allowed to declare variables anywhere except at the very beginning of a block.</blockquote>
 
-Solution was to add <code>-std=c99</code> to the Makefile. My new AVR Makefile now looks like this..
+Solution was to add `-std=c99` to the Makefile. My new AVR Makefile now looks like this..
 
 <Gist id="1028804" file="gistfile1.mak" />

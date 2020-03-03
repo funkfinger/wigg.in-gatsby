@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My war is winding down with OAuth
-date: "2010-03-16"
+date: '2010-03-16'
 tags:
   - access-token
   - code
@@ -35,8 +35,8 @@ Summary of what's going on with OAuth:
 <li>create the access token:
 <ul><li>this makes a call to the provider</li>
 <li>the user is redirected from the provider to the callback URL</li>
-<li>a querystring variable - <code>oauth_verifier</code> - is included with the callback URL</li>
-<li>the <code>oauth_verifier</code> value is then sent back to the provider</li>
+<li>a querystring variable - `oauth_verifier` - is included with the callback URL</li>
+<li>the `oauth_verifier` value is then sent back to the provider</li>
 <li>the provider then returns an access token</li>
 <li>the access token can hang around for a while and I'll save that in the database attached to the User model</li>
 </ul>

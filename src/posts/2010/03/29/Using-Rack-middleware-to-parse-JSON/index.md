@@ -14,7 +14,7 @@ tags:
   - testing
 ---
 
-In attempting to AJAX-ize the site, I had the desire to handle JSON as if it were form post data. Queue a Rack middleware solution. <code><a href='http://github.com/rack/rack-contrib'>rack-contrib</a></code> contains a bunch of common middleware extensions, one being the horribly named <code>PostBodyContentTypeParser</code>. To get this working I added:
+In attempting to AJAX-ize the site, I had the desire to handle JSON as if it were form post data. Queue a Rack middleware solution. `<a href='http://github.com/rack/rack-contrib'>rack-contrib</a>` contains a bunch of common middleware extensions, one being the horribly named `PostBodyContentTypeParser`. To get this working I added:
 
 ```ruby
 require 'rack/contrib'
